@@ -6,7 +6,7 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 11:48:29 by labdello          #+#    #+#             */
-/*   Updated: 2024/04/06 12:26:28 by labdello         ###   ########.fr       */
+/*   Updated: 2024/04/06 13:19:03 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,9 @@ int	ft_strlen(char *str)
 
 int	get_nbr_len(int nbr)
 {
-	unsigned int	i;
 	unsigned int	nb;
 	unsigned int	count;
 
-	i = 0;
 	nb = nbr;
 	count = 1;
 	if (nbr < 0)
