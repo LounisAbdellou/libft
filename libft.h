@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/06 12:30:30 by labdello          #+#    #+#             */
-/*   Updated: 2024/04/06 13:30:56 by labdello         ###   ########.fr       */
+/*   Created: 2024/04/06 13:28:39 by labdello          #+#    #+#             */
+/*   Updated: 2024/04/06 13:30:12 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_H
+# define LIBFT_H
 
-char	*ft_strncpy(char *dest, char *src, size_t n)
-{
-	size_t	i;
+# include <unistd.h>
+# include <string.h>
+# include <stdlib.h>
 
-	i = 0;
-	while (i < n && src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
-}
+#endif

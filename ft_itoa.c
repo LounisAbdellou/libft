@@ -6,11 +6,11 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 11:48:29 by labdello          #+#    #+#             */
-/*   Updated: 2024/04/06 13:19:03 by labdello         ###   ########.fr       */
+/*   Updated: 2024/04/06 13:42:34 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h" 
 
 int	ft_strlen(char *str)
 {
