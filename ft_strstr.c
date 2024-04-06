@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/06 14:29:40 by labdello          #+#    #+#             */
-/*   Updated: 2024/04/06 16:29:41 by labdello         ###   ########.fr       */
+/*   Created: 2024/04/06 16:23:39 by labdello          #+#    #+#             */
+/*   Updated: 2024/04/06 22:40:05 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strstr(char *str, char *needle)
 {
-	unsigned int	i;
-	int				len;
+	int	i;
+	int	j;
 
 	i = 0;
-	len = ft_strlen(dest);
-	while (src[i] != '\0')
+	if (ft_strlen(needle) < 1)
+		return (str);
+	while (str[i] != '\0')
 	{
-		dest[len + i] = src[i];
+		j = 0;
+		while (needle[j] != '\0' && str[i + j] == needle[j])
+			j++;
+		if (j == ft_strlen(needle))
+			return (&str[i]);
 		i++;
 	}
-	dest[len + i] = '\0';
-	return (dest);
+	return (NULL);
 }
