@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/06 13:28:39 by labdello          #+#    #+#             */
-/*   Updated: 2024/04/06 14:33:41 by labdello         ###   ########.fr       */
+/*   Created: 2024/04/06 14:34:47 by labdello          #+#    #+#             */
+/*   Updated: 2024/04/06 14:45:30 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-
-# include <unistd.h>
-# include <string.h>
-# include <stdlib.h>
-
-int	ft_strlen(char *str);
-
-#endif
+int	ft_strlen(char *str)
+{
+	int	i;
+	
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
