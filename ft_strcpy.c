@@ -6,13 +6,15 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 12:30:30 by labdello          #+#    #+#             */
-/*   Updated: 2024/04/06 13:22:09 by labdello         ###   ########.fr       */
+/*   Updated: 2024/04/07 13:03:37 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strcpy(char *dest, char *src)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
 	while (src[i] != '\0')

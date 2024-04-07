@@ -6,13 +6,15 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 14:34:47 by labdello          #+#    #+#             */
-/*   Updated: 2024/04/06 15:36:53 by labdello         ###   ########.fr       */
+/*   Updated: 2024/04/07 12:58:29 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] != '\0')

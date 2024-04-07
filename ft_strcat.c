@@ -6,7 +6,7 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 14:29:40 by labdello          #+#    #+#             */
-/*   Updated: 2024/04/06 16:29:41 by labdello         ###   ########.fr       */
+/*   Updated: 2024/04/07 12:59:15 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strcat(char *dest, char *src)
 {
-	unsigned int	i;
-	int				len;
+	size_t	i;
+	size_t	len;
 
 	i = 0;
 	len = ft_strlen(dest);
