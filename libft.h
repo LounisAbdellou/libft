@@ -17,6 +17,7 @@
 # include <string.h>
 # include <stdlib.h>
 
+size_t	ft_strlen(char *str);
 int		ft_isspace(int c);
 int		ft_islower(int c);
 int		ft_isupper(int c);
@@ -28,10 +29,10 @@ int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_atoi(char *str);
-char	*ft_itoa(int nbr);
-size_t	ft_strlen(char *str);
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
 void	ft_putnbr(int nbr);
+char	*ft_itoa(int nbr);
+char    *ft_strcat(char *dest, char *src);
 
 #endif
