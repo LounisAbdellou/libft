@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 00:06:05 by labdello          #+#    #+#             */
-/*   Updated: 2024/04/12 11:48:53 by labdello         ###   ########.fr       */
+/*   Created: 2024/04/12 10:49:59 by labdello          #+#    #+#             */
+/*   Updated: 2024/04/12 11:46:06 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	size_t	total_len;
-	char	*copy;
+	size_t	i;
+	char	*mapped_str;
 
-	total_len = ft_strlen((char *)s1) + ft_strlen((char *)s2);
-	copy = (char *) malloc(sizeof(char) * (total_len + 1));
-	if (!copy)
+	i = 0;
+	mapped_str = (char *) malloc(sizeof(char) * (ft_strlen((char *)s) + 1));
+	if (!mapped_str)
 		return (NULL);
-	*copy = '\0';
-	ft_strcat(copy, (char *)s1);
-	ft_strcat(copy, (char *)s2);
-	return (copy);
+	mapped_str[ft_strlen((char *)s)] = '\0';
+	while (s[i] != '\0')
+	{
+		mapped_str[i] = (*f)(s[i]);
+		i++;
+	}
+	return (mapped_str);
 }
