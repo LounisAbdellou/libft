@@ -6,7 +6,7 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 13:28:39 by labdello          #+#    #+#             */
-/*   Updated: 2024/04/12 11:46:31 by labdello         ###   ########.fr       */
+/*   Updated: 2024/04/14 13:22:45 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int		ft_atoi(char *str);
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
 void	ft_putnbr(int nbr);
+void	ft_bzero(void *s, size_t n);
 char	*ft_itoa(int nbr);
 char	*ft_strcat(char *dest, char *src);
 
