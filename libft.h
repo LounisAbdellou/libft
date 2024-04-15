@@ -6,7 +6,7 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 13:28:39 by labdello          #+#    #+#             */
-/*   Updated: 2024/04/14 13:22:45 by labdello         ###   ########.fr       */
+/*   Updated: 2024/04/15 22:58:57 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <string.h>
 # include <stdlib.h>
 
+int		ft_abs(int a, int b);
 size_t	ft_strlen(char *str);
 int		ft_isspace(int c);
 int		ft_islower(int c);
@@ -35,5 +36,6 @@ void	ft_putnbr(int nbr);
 void	ft_bzero(void *s, size_t n);
 char	*ft_itoa(int nbr);
 char	*ft_strcat(char *dest, char *src);
+char	*ft_strndup(char const *s, size_t n);
 
 #endif
