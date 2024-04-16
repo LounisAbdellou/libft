@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 17:42:52 by labdello          #+#    #+#             */
-/*   Updated: 2024/04/16 14:42:58 by labdello         ###   ########.fr       */
+/*   Created: 2024/04/16 14:36:48 by labdello          #+#    #+#             */
+/*   Updated: 2024/04/16 14:40:42 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+void	ft_putendl(char const *s)
 {
-	size_t	i;
+	ft_putstr(s);
+	ft_putchar('\n');
+}
 
-	i = 0;
-	while (s[i] != '\0')
-	{
-		ft_putchar(s[i]);
-		i++;
-	}
+int main()
+{
+	const char *str = "Hello World";
+	ft_putendl(str);
 }
