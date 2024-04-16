@@ -6,13 +6,11 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 13:24:49 by labdello          #+#    #+#             */
-/*   Updated: 2024/04/07 13:27:01 by labdello         ###   ########.fr       */
+/*   Updated: 2024/04/16 22:21:41 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c)
 {
-	if (c < 48 || c > 57)
-		return (0);
-	return (1);
+	return (c >= 48 && c <= 57);
 }
