@@ -6,7 +6,7 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 00:11:11 by labdello          #+#    #+#             */
-/*   Updated: 2024/04/16 00:14:08 by labdello         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:35:36 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	get_word_count(char const *s, char c)
 
 	i = 0;
 	count = 0;
+	if (!s)
+		return (0);
 	while (s[i] != '\0')
 	{
 		if (s[i] != c)
@@ -43,7 +45,7 @@ char	**ft_strsplit(char const *s, char c)
 	i = 0;
 	tab_i = 0;
 	tab = (char **) malloc(sizeof(char *) * (get_word_count(s, c) + 1));
-	if (!tab)
+	if (!tab || !s)
 		return (NULL);
 	tab[get_word_count(s, c)] = NULL;
 	while (s[i] != '\0')

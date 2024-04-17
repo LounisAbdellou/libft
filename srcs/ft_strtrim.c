@@ -6,7 +6,7 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 20:05:51 by labdello          #+#    #+#             */
-/*   Updated: 2024/04/16 22:37:47 by labdello         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:20:01 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ char	*ft_strtrim(char const *s)
 	size_t	str_size;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	while (is_whitespace(s[i]))
 		i++;
 	start_i = i;

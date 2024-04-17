@@ -6,7 +6,7 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 10:49:59 by labdello          #+#    #+#             */
-/*   Updated: 2024/04/12 11:46:06 by labdello         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:58:11 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	char	*mapped_str;
 
 	i = 0;
+	if (!s || !f)
+		return (NULL);
 	mapped_str = (char *) malloc(sizeof(char) * (ft_strlen((char *)s) + 1));
 	if (!mapped_str)
 		return (NULL);

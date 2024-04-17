@@ -6,7 +6,7 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 11:35:44 by labdello          #+#    #+#             */
-/*   Updated: 2024/04/06 11:47:59 by labdello         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:26:22 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@ int	ft_atoi(char *str)
 
 	i = 0;
 	res = 0;
-	mult = 1;
+	mult = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] == '-' && mult > 0)
+		if (str[i] == '+' && mult == 0)
+			mult = 1;
+		else if (str[i] == '-' && mult == 0)
 			mult = -1;
 		else if (str[i] < '0' || str[i] > '9')
 			break ;
@@ -29,5 +31,7 @@ int	ft_atoi(char *str)
 			res = (res * 10) + (str[i] - 48);
 		i++;
 	}
+	if (mult == 0)
+		mult = 1;
 	return (res * mult);
 }
