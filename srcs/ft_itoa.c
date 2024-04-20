@@ -6,7 +6,7 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 11:48:29 by labdello          #+#    #+#             */
-/*   Updated: 2024/04/16 19:53:46 by labdello         ###   ########.fr       */
+/*   Updated: 2024/04/20 23:53:47 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,15 @@ int	get_nbr_len(int nbr)
 
 void	fill_nbr(int nbr, char *str)
 {
+	size_t			len;
 	unsigned int	nb;
 
 	nb = nbr;
+	len = ft_strlen(str);
 	if (nbr < 0)
 	{
 		nb = -nbr;
-		str[ft_strlen(str)] = '-';
+		str[len] = '-';
 	}
 	if (nb >= 10)
 	{
@@ -49,7 +51,7 @@ void	fill_nbr(int nbr, char *str)
 	}
 	else
 	{
-		str[ft_strlen(str)] = nb + 48;
+		str[len] = nb + 48;
 	}
 }
 
@@ -62,7 +64,16 @@ char	*ft_itoa(int n)
 	str = (char *) malloc(sizeof(char) * (nbr_len + 1));
 	if (!str)
 		return (NULL);
-	str[nbr_len] = '\0';
+	str[0] = '\0';
 	fill_nbr(n, str);
+	str[ft_strlen(str)] = '\0';
 	return (str);
+}
+
+#include <stdio.h>
+int main(int ac, char **av)
+{
+	(void)ac;
+	(void)av;
+	printf("%s\n", ft_itoa(-32));
 }
