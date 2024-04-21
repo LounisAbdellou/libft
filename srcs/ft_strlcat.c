@@ -6,13 +6,13 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 23:32:13 by labdello          #+#    #+#             */
-/*   Updated: 2024/04/20 23:12:02 by labdello         ###   ########.fr       */
+/*   Updated: 2024/04/21 02:33:31 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlcat(char *dest, char *src, size_t n)
+size_t	ft_strlcat(char *dest, char *src, size_t n)
 {
 	size_t	i;
 	size_t	src_len;

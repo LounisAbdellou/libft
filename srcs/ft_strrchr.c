@@ -6,7 +6,7 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 15:11:35 by labdello          #+#    #+#             */
-/*   Updated: 2024/04/07 15:14:03 by labdello         ###   ########.fr       */
+/*   Updated: 2024/04/21 00:19:54 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strrchr(char *str, int c)
 	size_t	i;
 
 	i = ft_strlen(str);
-	while (i > 1 && str[i] != c)
+	while (i && str[i] != c)
 		i--;
 	if (str[i] == c)
 		return (str + i);
