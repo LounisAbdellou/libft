@@ -1,7 +1,5 @@
-SRCS = $(wildcard srcs/*.c)
+SRCS = $(wildcard ./*.c)
 OBJS = ${SRCS:.c=.o}
-PRE	= ./srcs/
-HEAD = ./includes/
 NAME = libft.a
 AR = ar rc
 RM = rm -f
@@ -12,7 +10,7 @@ CFLAGS = -Wall -Wextra -Werror
 all: ${NAME}
 
 .c.o:
-	${GCC} ${CFLAGS} -c -I ${HEAD} $< -o ${<:.c=.o}
+	${GCC} ${CFLAGS} -c -I. $< -o ${<:.c=.o}
 
 ${NAME}: ${OBJS}
 	${AR} ${NAME} ${OBJS}
