@@ -6,7 +6,7 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 13:28:39 by labdello          #+#    #+#             */
-/*   Updated: 2024/04/21 02:24:58 by labdello         ###   ########.fr       */
+/*   Updated: 2024/05/15 09:02:20 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@
 # include <string.h>
 # include <stdlib.h>
 
+size_t	ft_nbrlen(int nbr);
 size_t	ft_strlen(char *str);
 size_t	ft_strlcat(char *dest, char *src, size_t n);
+int		ft_abs(int nb);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);

@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_abs.c                                           :+:      :+:    :+:   */
+/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 20:26:03 by labdello          #+#    #+#             */
-/*   Updated: 2024/05/15 08:33:06 by labdello         ###   ########.fr       */
+/*   Created: 2024/05/15 08:10:41 by labdello          #+#    #+#             */
+/*   Updated: 2024/05/15 13:59:10 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_abs(int nb)
-{
-	if (nb < 0)
-		return (-nb);
-	return (nb);
-}
+#include "libft.h"
+
+// char  *ft_itoa_base(int value, int *base)
+// {
+//
+// }
+//
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	char *str = ft_itoa_base(42, 16);
+// 	printf("%s\n", str);
+// }

@@ -6,49 +6,29 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 11:48:29 by labdello          #+#    #+#             */
-/*   Updated: 2024/04/21 00:08:37 by labdello         ###   ########.fr       */
+/*   Updated: 2024/05/15 14:21:26 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h" 
 
-size_t	get_nbr_len(int nbr)
+void	fill_nbr(int nbr, char *str)
 {
-	unsigned int	nb;
-	size_t			count;
+	int		r;
+	size_t	i;
+	size_t	nb;
 
-	nb = nbr;
-	count = 1;
-	if (nbr < 0)
+	i = 0;
+	nb = ft_abs(nbr);
+	while (nb)
 	{
-		nb = -nbr;
-		count++;
-	}
-	while (nb / 10 >= 1)
-	{
+		r = nb % 10;
+		str[i++] = r + 48;
 		nb = nb / 10;
-		count++;
 	}
-	return (count);
-}
-
-void	fill_nbr(int nbr, char *str, size_t *i)
-{
-	unsigned int	nb;
-
-	nb = nbr;
 	if (nbr < 0)
-	{
-		nb = -nbr;
-		str[(*i)++] = '-';
-	}
-	if (nb >= 10)
-	{
-		fill_nbr(nb / 10, str, i);
-		fill_nbr(nb % 10, str, i);
-	}
-	else
-		str[(*i)++] = nb + 48;
+		str[i++] = '-';
+	str[i] = '\0';
 }
 
 char	*ft_itoa(int n)
@@ -57,12 +37,18 @@ char	*ft_itoa(int n)
 	size_t	nbr_len;
 	char	*str;
 
-	i = 0;
-	nbr_len = get_nbr_len(n);
+	nbr_len = ft_nbrlen(n);
 	str = (char *) malloc(sizeof(char) * (nbr_len + 1));
 	if (!str)
 		return (NULL);
-	fill_nbr(n, str, &i);
-	str[i] = '\0';
+	fill_nbr(n, str);
 	return (str);
+}
+
+#include <stdio.h>
+int main(int ac, char **av)
+{
+	(void)ac;
+	printf("%s\n", ft_itoa(ft_atoi(av[1])));
+	return 0;
 }
