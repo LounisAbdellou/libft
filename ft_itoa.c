@@ -6,7 +6,7 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 11:48:29 by labdello          #+#    #+#             */
-/*   Updated: 2024/05/15 14:21:26 by labdello         ###   ########.fr       */
+/*   Updated: 2024/05/16 21:04:32 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	fill_nbr(int nbr, char *str)
 {
-	int		r;
-	size_t	i;
-	size_t	nb;
+	int				r;
+	size_t			i;
+	unsigned int	nb;
 
 	i = 0;
 	nb = ft_abs(nbr);
@@ -29,6 +29,7 @@ void	fill_nbr(int nbr, char *str)
 	if (nbr < 0)
 		str[i++] = '-';
 	str[i] = '\0';
+	ft_strrev(str);
 }
 
 char	*ft_itoa(int n)
