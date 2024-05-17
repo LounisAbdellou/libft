@@ -6,7 +6,7 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 11:48:29 by labdello          #+#    #+#             */
-/*   Updated: 2024/05/16 21:04:32 by labdello         ###   ########.fr       */
+/*   Updated: 2024/05/17 18:11:54 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,4 @@ char	*ft_itoa(int n)
 		return (NULL);
 	fill_nbr(n, str);
 	return (str);
-}
-
-#include <stdio.h>
-int main(int ac, char **av)
-{
-	(void)ac;
-	printf("%s\n", ft_itoa(ft_atoi(av[1])));
-	return 0;
 }

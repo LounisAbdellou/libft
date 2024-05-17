@@ -6,20 +6,44 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 08:10:41 by labdello          #+#    #+#             */
-/*   Updated: 2024/05/15 13:59:10 by labdello         ###   ########.fr       */
+/*   Updated: 2024/05/17 19:42:28 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft.h" 
 
-// char  *ft_itoa_base(int value, int *base)
-// {
-//
-// }
-//
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char *str = ft_itoa_base(42, 16);
-// 	printf("%s\n", str);
-// }
+void	fill_nbr_base(int nbr, char *str, char *base)
+{
+	int				r;
+	size_t			i;
+	size_t			len;
+	unsigned int	nb;
+
+	i = 0;
+	nb = ft_abs(nbr);
+	len = ft_strlen(base);
+	while (nb)
+	{
+		r = nb % len;
+		str[i++] = base[r];
+		nb = nb / len;
+	}
+	if (nbr < 0)
+		str[i++] = '-';
+	str[i] = '\0';
+	ft_strrev(str);
+}
+
+char	*ft_itoa_base(int n, char *base)
+{
+	size_t	i;
+	size_t	nbr_len;
+	char	*str;
+
+	nbr_len = ft_nbrlen(n);
+	str = (char *) malloc(sizeof(char) * (nbr_len + 1));
+	if (!str)
+		return (NULL);
+	fill_nbr_base(n, str, base);
+	return (str);
+}
