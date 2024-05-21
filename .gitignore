@@ -1,0 +1,5 @@
+prog
+*.out
+*.o
+*.a
+libft-unit-test/

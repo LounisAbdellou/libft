@@ -6,7 +6,7 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 11:48:29 by labdello          #+#    #+#             */
-/*   Updated: 2024/05/17 18:11:54 by labdello         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:16:13 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	fill_nbr(int nbr, char *str)
 
 char	*ft_itoa(int n)
 {
-	size_t	i;
 	size_t	nbr_len;
 	char	*str;
 

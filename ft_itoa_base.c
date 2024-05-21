@@ -6,7 +6,7 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 08:10:41 by labdello          #+#    #+#             */
-/*   Updated: 2024/05/17 19:42:28 by labdello         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:16:06 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	fill_nbr_base(int nbr, char *str, char *base)
 
 char	*ft_itoa_base(int n, char *base)
 {
-	size_t	i;
 	size_t	nbr_len;
 	char	*str;
 
