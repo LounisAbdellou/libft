@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isupper.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/07 13:48:18 by labdello          #+#    #+#             */
-/*   Updated: 2024/05/29 16:36:01 by labdello         ###   ########.fr       */
+/*   Created: 2024/05/22 16:16:43 by labdello          #+#    #+#             */
+/*   Updated: 2024/05/29 17:27:42 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isupper(int c)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	return (c >= 65 && c <= 90);
+	void	*ptr;
+
+	if (!(nmemb * size))
+		return (malloc(0));
+	ptr = (void *)malloc(size * nmemb);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, size * nmemb);
+	return (ptr);
 }

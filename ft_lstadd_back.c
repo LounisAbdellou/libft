@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/07 13:48:18 by labdello          #+#    #+#             */
-/*   Updated: 2024/05/29 16:36:01 by labdello         ###   ########.fr       */
+/*   Created: 2024/05/25 10:38:30 by labdello          #+#    #+#             */
+/*   Updated: 2024/05/25 11:13:44 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isupper(int c)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	return (c >= 65 && c <= 90);
+	t_list	*last_element;
+
+	if (!lst || !new)
+		return ;
+	if (*lst == NULL)
+		*lst = new;
+	else
+	{
+		last_element = ft_lstlast(*(lst));
+		last_element->next = new;
+	}
 }

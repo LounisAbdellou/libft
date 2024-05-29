@@ -6,7 +6,7 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 12:43:07 by labdello          #+#    #+#             */
-/*   Updated: 2024/04/16 22:27:34 by labdello         ###   ########.fr       */
+/*   Updated: 2024/05/29 17:19:18 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strdup(char *str)
 	char	*copy;
 
 	i = 0;
+	if (!str)
+		return (NULL);
 	len = ft_strlen(str);
 	copy = (char *) malloc(sizeof(char) * (len + 1));
 	if (!copy)

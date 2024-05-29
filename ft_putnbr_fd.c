@@ -6,7 +6,7 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 14:22:00 by labdello          #+#    #+#             */
-/*   Updated: 2024/04/16 14:25:06 by labdello         ###   ########.fr       */
+/*   Updated: 2024/05/21 17:40:12 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putnbr_fd(int n, int fd)
 	nb = n;
 	if (n < 0)
 	{
-		ft_putchar('-');
+		ft_putchar_fd('-', fd);
 		nb = -n;
 	}
 	if (nb >= 10)

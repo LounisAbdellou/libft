@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/07 13:48:18 by labdello          #+#    #+#             */
-/*   Updated: 2024/05/29 16:36:01 by labdello         ###   ########.fr       */
+/*   Created: 2024/05/22 18:09:15 by labdello          #+#    #+#             */
+/*   Updated: 2024/05/23 19:04:50 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isupper(int c)
+int	ft_lstsize(t_list *lst)
 {
-	return (c >= 65 && c <= 90);
+	int		count;
+
+	count = 0;
+	while (lst != NULL)
+	{
+		lst = lst->next;
+		count++;
+	}
+	return (count);
 }

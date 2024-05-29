@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/07 13:48:18 by labdello          #+#    #+#             */
-/*   Updated: 2024/05/29 16:36:01 by labdello         ###   ########.fr       */
+/*   Created: 2024/05/23 18:49:55 by labdello          #+#    #+#             */
+/*   Updated: 2024/05/29 17:20:57 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isupper(int c)
+t_list	*ft_lstnew(void *content)
 {
-	return (c >= 65 && c <= 90);
+	t_list	*element;
+
+	element = (t_list *)malloc(sizeof(t_list));
+	if (!element)
+		return (NULL);
+	element->next = NULL;
+	element->content = content;
+	return (element);
 }

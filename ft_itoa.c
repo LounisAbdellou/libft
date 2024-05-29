@@ -6,13 +6,13 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 11:48:29 by labdello          #+#    #+#             */
-/*   Updated: 2024/05/21 14:16:13 by labdello         ###   ########.fr       */
+/*   Updated: 2024/05/29 17:23:25 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h" 
 
-void	fill_nbr(int nbr, char *str)
+static void	fill_nbr(int nbr, char *str)
 {
 	int				r;
 	size_t			i;
@@ -28,6 +28,8 @@ void	fill_nbr(int nbr, char *str)
 	}
 	if (nbr < 0)
 		str[i++] = '-';
+	else if (nbr == 0)
+		str[i++] = '0';
 	str[i] = '\0';
 	ft_strrev(str);
 }

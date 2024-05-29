@@ -1,18 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/07 13:48:18 by labdello          #+#    #+#             */
-/*   Updated: 2024/05/29 16:36:01 by labdello         ###   ########.fr       */
+/*   Created: 2024/05/25 11:18:06 by labdello          #+#    #+#             */
+/*   Updated: 2024/05/29 16:42:50 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isupper(int c)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	return (c >= 65 && c <= 90);
+	t_list	*new;
+	t_list	*front;
+	void	*content;
+
+	if (!lst || !f || !del)
+		return (NULL);
+	front = 0;
+	while (lst != NULL)
+	{
+		content = f(lst->content);
+		new = ft_lstnew(content);
+		if (!new)
+		{
+			del(content);
+			ft_lstclear(&front, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&front, new);
+		lst = lst->next;
+	}
+	return (front);
 }

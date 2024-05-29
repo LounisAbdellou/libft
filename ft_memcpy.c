@@ -6,7 +6,7 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 13:40:57 by labdello          #+#    #+#             */
-/*   Updated: 2024/04/08 17:36:10 by labdello         ###   ########.fr       */
+/*   Updated: 2024/05/21 17:59:19 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*src_ptr;
 	unsigned char	*dest_ptr;
 
+	if (!dest && !src)
+		return (NULL);
 	i = 0;
 	src_ptr = (unsigned char *)src;
 	dest_ptr = (unsigned char *)dest;
