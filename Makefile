@@ -1,7 +1,7 @@
 NAME = libft.a
 CC = cc
 AR = ar rcs
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -Iincludes
 
 SRCS = ft_nbrlen.c ft_strlen.c ft_strlcpy.c ft_strlcat.c ft_abs.c ft_isalpha.c \
 	   ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_islower.c \
@@ -23,7 +23,7 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 
 .c.o:
-	$(CC) $(CFLAGS) -c -I. $< -o $(<:.c=.o)
+	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
