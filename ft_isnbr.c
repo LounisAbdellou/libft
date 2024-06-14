@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_isnbr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/14 14:53:13 by labdello          #+#    #+#             */
-/*   Updated: 2024/06/20 12:50:19 by labdello         ###   ########.fr       */
+/*   Created: 2024/06/14 11:40:43 by labdello          #+#    #+#             */
+/*   Updated: 2024/06/19 18:57:36 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+int	ft_isnbr(char *str)
 {
-	size_t	max_len;
+	size_t	i;
 
-	if (!s)
-		return (NULL);
-	else if (start >= ft_strlen(s))
-		return (ft_strnew(0));
-	max_len = ft_strlen(s + start);
-	if (len < max_len)
-		max_len = len;
-	return (ft_strndup(s + start, max_len));
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if ((str[i] == '-' || str[i] == '+') && i == 0)
+			i++;
+		if (!ft_isdigit(str[i]))
+			return (0);
+		i++;
+	}
+	return (1);
 }
+

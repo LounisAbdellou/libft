@@ -6,7 +6,7 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 13:28:39 by labdello          #+#    #+#             */
-/*   Updated: 2024/06/13 18:08:18 by labdello         ###   ########.fr       */
+/*   Updated: 2024/06/14 11:45:08 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dest, char *src, size_t n);
 size_t	ft_strlcat(char *dest, char *src, size_t n);
 int		ft_abs(int nb);
+int		ft_isnbr(char *str);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
