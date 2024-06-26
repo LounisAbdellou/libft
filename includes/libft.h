@@ -6,7 +6,7 @@
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 13:28:39 by labdello          #+#    #+#             */
-/*   Updated: 2024/06/25 16:16:01 by labdello         ###   ########.fr       */
+/*   Updated: 2024/06/26 14:41:02 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ char		*ft_strrchr(const char *str, int c);
 char		**ft_split(char const *s, char c);
 char		*ft_strtrim(char const *s, char const *set);
 void		ft_strrev(char *s);
+void		ft_reverse_stab(char **tab);
 void		ft_putendl_fd(char const *s, int fd);
 void		ft_putchar_fd(char c, int fd);
 void		ft_bzero(void *s, size_t n);
