@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isnbr.c                                         :+:      :+:    :+:   */
+/*   ft_free_tab.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/14 11:40:43 by labdello          #+#    #+#             */
-/*   Updated: 2024/06/26 17:31:29 by labdello         ###   ########.fr       */
+/*   Created: 2024/07/26 13:03:59 by labdello          #+#    #+#             */
+/*   Updated: 2024/08/03 18:53:39 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isnbr(char *str)
+void	ft_free_tab(char **tab)
 {
 	size_t	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (tab[i] != NULL)
 	{
-		if ((str[i] == '-' || str[i] == '+') && i == 0)
-			i++;
-		if (!ft_isdigit(str[i]))
-			return (0);
+		free(tab[i]);
+		tab[i] = NULL;
 		i++;
 	}
-	return (1);
+	free(tab);
 }

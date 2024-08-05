@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isnbr.c                                         :+:      :+:    :+:   */
+/*   ft_tablen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/14 11:40:43 by labdello          #+#    #+#             */
-/*   Updated: 2024/06/26 17:31:29 by labdello         ###   ########.fr       */
+/*   Created: 2024/07/26 17:33:18 by labdello          #+#    #+#             */
+/*   Updated: 2024/07/26 17:36:30 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isnbr(char *str)
+size_t	ft_tablen(char **tab)
 {
 	size_t	i;
 
 	i = 0;
-	while (str[i] != '\0')
-	{
-		if ((str[i] == '-' || str[i] == '+') && i == 0)
-			i++;
-		if (!ft_isdigit(str[i]))
-			return (0);
+	while (tab[i] != NULL)
 		i++;
-	}
-	return (1);
+	return (i);
 }

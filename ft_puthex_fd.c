@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isnbr.c                                         :+:      :+:    :+:   */
+/*   ft_puthex_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/14 11:40:43 by labdello          #+#    #+#             */
-/*   Updated: 2024/06/26 17:31:29 by labdello         ###   ########.fr       */
+/*   Created: 2024/06/02 19:11:42 by labdello          #+#    #+#             */
+/*   Updated: 2024/08/05 16:14:23 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isnbr(char *str)
+void	ft_puthex_fd(unsigned int hex, int capitilize, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	while (str[i] != '\0')
+	if (hex >= 16)
 	{
-		if ((str[i] == '-' || str[i] == '+') && i == 0)
-			i++;
-		if (!ft_isdigit(str[i]))
-			return (0);
-		i++;
+		ft_puthex_fd(hex / 16, capitilize, fd);
+		ft_puthex_fd(hex % 16, capitilize, fd);
 	}
-	return (1);
+	else
+	{
+		if (hex <= 9)
+			ft_putchar_fd(hex + 48, fd);
+		else
+		{
+			if (capitilize)
+				ft_putchar_fd((hex - 10) + 65, fd);
+			else
+				ft_putchar_fd((hex - 10) + 97, fd);
+		}
+	}
 }

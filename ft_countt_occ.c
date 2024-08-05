@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isnbr.c                                         :+:      :+:    :+:   */
+/*   ft_countt_occ.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/14 11:40:43 by labdello          #+#    #+#             */
-/*   Updated: 2024/06/26 17:31:29 by labdello         ###   ########.fr       */
+/*   Created: 2024/07/26 15:39:03 by labdello          #+#    #+#             */
+/*   Updated: 2024/07/28 07:35:06 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isnbr(char *str)
+int	ft_countt_occ(char **tab, char c)
 {
 	size_t	i;
+	size_t	j;
+	size_t	count;
 
 	i = 0;
-	while (str[i] != '\0')
+	count = 0;
+	while (tab[i] != NULL)
 	{
-		if ((str[i] == '-' || str[i] == '+') && i == 0)
-			i++;
-		if (!ft_isdigit(str[i]))
-			return (0);
+		j = 0;
+		while (tab[i][j] != '\0')
+		{
+			if (tab[i][j] == c)
+				count++;
+			j++;
+		}
 		i++;
 	}
-	return (1);
+	return (count);
 }

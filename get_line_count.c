@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isnbr.c                                         :+:      :+:    :+:   */
+/*   get_line_count.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/14 11:40:43 by labdello          #+#    #+#             */
-/*   Updated: 2024/06/26 17:31:29 by labdello         ###   ########.fr       */
+/*   Created: 2024/07/20 16:54:41 by labdello          #+#    #+#             */
+/*   Updated: 2024/08/03 19:09:52 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isnbr(char *str)
+size_t	get_line_count(int fd)
 {
-	size_t	i;
+	size_t	count;
+	char	*line;
 
-	i = 0;
-	while (str[i] != '\0')
+	count = 0;
+	line = get_next_line(fd);
+	while (line != NULL)
 	{
-		if ((str[i] == '-' || str[i] == '+') && i == 0)
-			i++;
-		if (!ft_isdigit(str[i]))
-			return (0);
-		i++;
+		free(line);
+		line = get_next_line(fd);
+		count++;
 	}
-	return (1);
+	close(fd);
+	return (count);
 }

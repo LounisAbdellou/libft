@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isnbr.c                                         :+:      :+:    :+:   */
+/*   ft_hexlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: labdello <labdello@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/14 11:40:43 by labdello          #+#    #+#             */
-/*   Updated: 2024/06/26 17:31:29 by labdello         ###   ########.fr       */
+/*   Created: 2024/08/05 16:12:48 by labdello          #+#    #+#             */
+/*   Updated: 2024/08/05 16:13:04 by labdello         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isnbr(char *str)
+size_t	ft_hexlen(unsigned int hex)
 {
-	size_t	i;
+	size_t			count;
 
-	i = 0;
-	while (str[i] != '\0')
+	count = 1;
+	while (hex / 16 >= 1)
 	{
-		if ((str[i] == '-' || str[i] == '+') && i == 0)
-			i++;
-		if (!ft_isdigit(str[i]))
-			return (0);
-		i++;
+		hex = hex / 16;
+		count++;
 	}
-	return (1);
+	return (count);
 }
